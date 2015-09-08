@@ -5,8 +5,6 @@
 
   <!-- Custom JS -->
   <script src="<?php echo theme_url('/js/scripts.js'); ?>"></script>
-
-<script src="../../../../assets/js/hashgrid.js"></script>
   
 <!-- Piwik -->
 <script type="text/javascript">
