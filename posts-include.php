@@ -9,7 +9,11 @@
           <?php while(posts()): ?>
             <li>
               <h2><a href="<?php echo article_url(); ?>"><?php echo article_title(); ?></a></h2>
-              <h6 class="bold">in <a href="<?php echo article_category_url(); ?>"><?php echo article_category(); ?></a>  | Read Time: <?php echo dg_est_reading_time(); ?> | Posted <time datetime="<?php echo date(DATE_W3C, article_time()); ?>"><?php echo relative_time(article_time()); ?></time>  </h6>
+              <h6 class="bold">in
+	      <a href="<?php echo article_category_url(); ?>"><?php echo article_category(); ?></a>
+	      | Read Time: <?php echo dg_est_reading_time(); ?>
+	      | Posted <time datetime="<?php echo date(DATE_W3C, article_time()); ?>">
+	      <?php echo relative_time(article_time()); ?></time>  </h6>
               <?php if (article_description()): ?>
 								<div class="article-excerpt__intro">
 									<h6><?php echo article_description(); ?><a class="article-exceprt__readmore" href="<?php echo article_url(); ?>"> Continue Reading &#8594;</a></h6>

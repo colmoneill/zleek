@@ -56,7 +56,7 @@ function relative_time($date) {
 }
 
 function twitter_account() {
-  return site_meta('twitter', 'joshkennedy');
+  return site_meta('twitter', 'colmoneill');
 }
 
 function twitter_url() {
@@ -101,4 +101,22 @@ function footer_latest_posts() {
     // back to the start
     else $posts->rewind();
     return $result;
+}
+
+// Estimated article reading time
+function dg_est_reading_time() {
+	$mycontent = article_html();
+	$word = str_word_count(strip_tags($mycontent));
+	$m = floor($word / 175);
+	$s = floor($word % 175 / (175 / 60));
+	
+	if($m >= 1) {
+		
+	return $est = $m . ' min' . ($m == 1 ? '' : 's');
+	}
+	
+	elseif($s <= 59) {
+		
+	return $est = $s . ' second' . ($s == 1 ? '' : 's');
+	}
 }

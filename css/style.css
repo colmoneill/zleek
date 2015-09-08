@@ -1,4 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Open+Sans:400,700,300);
+@font-face {
+    font-family: 'karmillabold';
+    src: url('../../../../fonts/karmilla-bold-009-webfont.eot');
+    src: url('../../../../fonts/karmilla-bold-009-webfont.svg#karmillabold') format('svg'),
+  	 url('../../../../fonts/karmilla-bold-009-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../fonts/karmilla-bold-009-webfont.woff') format('woff'),
+         url('../../../../fonts/karmilla-bold-009-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'karmillaregular';
+    src: url('../../../../fonts/karmilla-regular-009-webfont.eot');
+    src: url('../../../../fonts/karmilla-regular-009-webfont.svg#karmillaregular') format('svg'),
+    	 url('../../../../fonts/karmilla-regular-009-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../../fonts/karmilla-regular-009-webfont.woff') format('woff'),
+         url('../../../../fonts/karmilla-regular-009-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /*- RESET ----------------------------------- */
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
@@ -29,42 +50,168 @@ table { border-collapse: collapse; border-spacing: 0; }
 a { text-decoration: none; }
 * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
 
+
+/*- GRID ----------------------------------- */
+
+
+
+/**
+ * Horizontal grid lines, defined by your base line height
+ *
+ * Remember, the CSS properties that define the box model:
+ * visible height = height + borders + margins + padding
+ */
+#grid div.horiz{
+
+    /* 16px line height */
+    height: 16px;
+    border-bottom: 1px dashed darkturquoise;
+    margin: 0;
+    padding: 0;
+
+}
+
+#grid{
+
+    /* Dimensions - same width as your grid with gutters */
+    width: 100%;
+
+    /* Grid (left-aligned)
+    position: absolute;
+    top: 0;
+    left: 0;
+    */
+
+    /* Grid (centered) */
+    position: absolute;
+    top: 0;
+
+}
+
+/**
+ * Vertical grid lines
+ *
+ * Set the column width taking the borders into consideration,
+ * and use margins to set column gutters.
+ */
+#grid.grid-1 div.vert{
+		height: 36px;
+    width: 330px;
+    border: solid darkturquoise;
+    border-width: 0 1px;
+    margin-right: 5px;
+
+}
+
+#grid div.vert.first-line{
+
+    margin-left: 164px;
+
+}
+
+
 /*- TYPOGRAPHY ----------------------------------- */
+
+
 body {
-  font-family: 'Droid Serif', serif;
-  color: #333332;
+  font-family: 'karmillaregular', 'karmilliabold', sans-serif;
+  color: #333333;
   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
+  background-color: #f1f1f1;
 }
+
+hr{
+	display: block;
+-webkit-margin-before: 0.5em;
+-webkit-margin-after: 0.5em;
+-webkit-margin-start: auto;
+-webkit-margin-end: auto;
+border-style: inset;
+
+}
+
 h1, h2, h3, h4, h5 {
-  font-family: 'Droid Serif', serif;
-  font-weight: 700;
+  font-family: 'karmillaregular', sans-serif;
+  font-weight: bold;
   letter-spacing: -1px;
   margin-bottom: 5px;
 }
-h1 { 
-  font-size: 36px;
-  line-height: 50px;
+
+h1 {
+  font-size: 3.25em;
+  line-height: 1.1111111em;
+  margin: 0 0 0 0;
 }
-h2, h3, h4, h5 {
-  font-size: 20px;
-  line-height: 24px;
+
+h2 {
+  font-size: 1.875em;
+  font-weight: normal;
+  line-height: 1.25em;}
+
+h3 {
+  font-size: 1.375em;
+    font-weight: lighter;
+  line-height: 1.4545455em;
+  margin: 1.0666667em 0 1.0666667em 0;
 }
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 0.4em 0;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.3333333em;
+  margin: 0 0 0.4444444em 0;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
 p {
-  font-family: 'Droid Serif', serif;
-  font-size: 20px;
+  font-family: 'karmillaregular', sans-serif;
+  font-size: 23px;
   font-weight: 400;
-  line-height: 30px;
-  margin-bottom: 35px;
+  line-height: 32px;
+  margin-bottom: 32px;
 }
+
+p.words {
+  color: #111111;
+	font-size: 32px;
+	font-style: bold;
+	line-height: 40px;
+	padding-left: 20px;
+	border-left: gray solid 3px;
+}
+
+p.emphasize{
+	text-align: left;
+	font-size: 48px;
+	line-height: 50px;
+	border-top: gray solid 3px;
+	border-bottom: gray solid 3px;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+P.em{
+	font-style: italic;
+}
+
 a, a:visited, a:active {
-  color: #D25437;
+  color: #555555;
   transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
   -webkit-transition: color .25s ease-in-out;
 }
 a:hover {
-  color: #333332;
+  color: #666666;
   transition: color .25s ease-in-out;
   -moz-transition: color .25s ease-in-out;
   -webkit-transition: color .25s ease-in-out;
@@ -73,14 +220,15 @@ em {
   font-style: italic;
 }
 strong {
-  font-weight: bold;
+  font-family: 'karmillabold';
 }
 article.post ul, article.post ol {
   font-size: 20px;
-  margin: 0 0 35px 40px;
+  margin: 0 0 35px 0;
 }
 article.post ul {
   list-style: disc;
+  list-style-type: square;
 }
 article.post ol {
   list-style: decimal;
@@ -97,6 +245,8 @@ article.post blockquote {
   margin-bottom: 35px;
   border-left: 4px solid #CCCCCC;
 }
+
+
 
 /*- BUTTONS ----------------------------------*/
 .button {
@@ -150,8 +300,8 @@ article.post blockquote {
 
 /*- LAYOUT ----------------------------------- */
 .wrap {
-  width: 960px;
-  margin: 0 auto;
+	max-width:900px;
+	margin: 0 auto;
 }
 .wrap.post {
   padding: 0 120px;
@@ -173,13 +323,12 @@ article.post blockquote {
 /*- HEADER ----------------------------------- */
 header.site-header {
   padding: 20px 0;
-  border-bottom: 1px solid #EEEEEE;
 }
 header.site-header a.menu {
   display: none;
 }
 header.site-header hgroup h1, header.site-header nav ul {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'karmillabold', sans-serif;
 }
 header.site-header hgroup {
   float: left;
@@ -192,10 +341,10 @@ header.site-header hgroup h1 {
   text-transform: uppercase;
 }
 header.site-header hgroup h1 a {
-  color: #333332;
+  color: #666666;
 }
 header.site-header hgroup h1 a:hover {
-  color: #D25437;
+  color: blue;
 }
 header.site-header nav {
   float: right;
@@ -212,7 +361,7 @@ header.site-header nav ul li a {
 }
 header.site-header nav ul li a:hover,
 header.site-header nav ul li a.active {
-  color: #333332;
+  color: #666666;
 }
 
 /*- ARTICLE ----------------------------------- */
@@ -223,13 +372,13 @@ section.article {
 section.archive {
   margin-top: 50px;
 }
-section.archive ol.post-list {
-  margin-top: 25px;
+section.archive ul.post-list {
+  margin-top: 0px;
 }
-section.archive ol.post-list li {
-  margin-bottom: 10px;
+section.archive ul.post-list li {
+  margin-bottom: 0px;
 }
-section.archive ol.post-list li span, section.archive ol.post-list li span time {
+section.archive ul.post-list li span, section.archive ul.post-list li span time {
   font-size: 12px;
   vertical-align: top;
   line-height: 100%;
@@ -244,7 +393,7 @@ section.article img.loading {
   z-index: 10;
 }
 section.article div.overlay {
-  background-color: #333332;
+  background-color: #666666;
   width: 100%;
   height: 530px;
   border-bottom: 1px solid #DDDDDD;
@@ -276,7 +425,7 @@ section.article article.post header.post-header hgroup {
   width: 100%;
 }
 section.article article.post header.post-header hgroup p.category {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'karmillabold', sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #999999;
@@ -295,21 +444,29 @@ section.article article.post header.post-header hgroup p.lead {
   margin-bottom: 0;
 }
 section.article article.post figure {
-  margin: 35px 0;
+  margin: 47px 0;
 }
 section.article article.post figure figcaption {
-  font-size: 12px;
-  font-style: italic;
+  font-size: 17px;
+  line-height: 23px;
+  color: gray;
 }
 section.article article.post figure img {
   max-width: 100%;
   width: 100%;
   height: auto;
 }
+
+section.article article.post figure img.wide {
+  max-width: 160%;
+  width: 160%;
+  height: auto;
+  margin-left: -30%;
+}
 section.article article.post p.meta {
   color: #999999;
   font-style: italic;
-  font-size: 16px;
+  font-size: 20px;
 }
 section.article article.post .video-container {
   position: relative;
@@ -328,14 +485,139 @@ section.article article.post .video-container embed {
   height: 100%;
 }
 
+/**
+ *   Comment form
+ */
+ul.commentlist {
+	margin-bottom: 40px;
+
+	list-style: none;
+	border-top: 1px solid rgba(22,36,54,.1);
+}
+	ul.commentlist .wrap {
+		position: relative;
+	}
+	ul.commentlist li {
+		padding: 40px 0;
+		border-bottom: 1px solid rgba(22,36,54,.1);
+	}
+		ul.commentlist time {
+			font-size: 13px;
+		}
+		ul.commentlist h2 {
+			font-size: 25px;
+			line-height: 33px;
+		}
+		ul.commentlist .counter {
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			font-size: 25px;
+			font-weight: 300;
+			color: #cdd2da;
+		}
+
+#comment {
+	overflow: hidden;
+	padding-top: 40px;
+}
+	#comment label[for] {
+		display: none;
+	}
+	#comment p {
+		float: left;
+		width: 48%;
+		margin-right: 4%;
+		margin-bottom: 10px;
+
+		text-indent: 0;
+	}
+		#comment p + p {
+			margin-right: 0;
+		}
+		#comment p.textarea {
+			float: none;
+			width: 100%;
+		}
+	#comment input, #comment textarea {
+		width: 100%;
+		padding: 10px 15px;
+
+		font-size: 15px;
+		font-weight: normal;
+
+		border: 1px solid rgba(22,36,54,.2);
+		border-radius: 4px;
+	}
+		#comment input:focus, #comment textarea:focus {
+			outline: none;
+			background: #f7f9fc;
+		}
+		#comment textarea {
+			min-height: 150px;
+			max-height: 800px;
+			resize: vertical;
+		}
+	#comment button {
+		display: inline-block;
+		padding: 9px 18px;
+
+		color: #fff;
+
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+
+		font-size: 13px;
+		font-weight: 500;
+	}
+		#comment button:hover {
+			background: #333333;
+		}
+		
+aside.categories{
+	margin-top: 30px;
+}
+
+ul.categories-list li{
+
+}
+		
+b.categories{
+	margin-top: 30px;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	font-size: 36px;
+	left: 10px;
+}
+
+article.post ul.categories-list{
+	list-style-type: none;
+		font-size: 18px; 
+		margin-left: 20px;
+}
+
+h1.blog-title{
+	margin-bottom: 30px;
+}
+
+h6.bold {
+	font-weight: bold;
+}
+
+ul.post-list li{
+	margin-top:;
+}
+
 /*- FOOTER ----------------------------------- */
 footer {
-  background-color: #333332;
+  background-color: #666666;
   padding: 30px 0;
   color: #FFFFFF;
 }
 footer p.category {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'karmillabold', sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #999999;
@@ -360,10 +642,10 @@ footer ol.previous-posts li h2 a {
   color: #FFFFFF;
 }
 footer ol.previous-posts li h2 a:hover {
-  color: #D25437;
+  color: blue;
 }
 footer ol.previous-posts li span.date {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'karmillabold', sans-serif;
   font-size: 12px;
   color: #999999;
   float: right;
@@ -387,6 +669,11 @@ div.sub-footer p {
   footer ol.previous-posts li h2, footer ol.previous-posts li span.date {
     float: none;
   }
+    section.article article.post figure img.wide {
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0;
+}
 }
 
 @media only screen and (max-width : 680px) {
@@ -395,8 +682,36 @@ div.sub-footer p {
     left: inherit;
     right: 6%;
   }
+  
+   .wrap.post {
+    padding: 0 3%;
+  }
+  
+  section.article article.post figure img.wide {
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0;
+}
+  
+    h1 {
+  font-size: 2.5em;
+  line-height: 1.3333333em;
+}
+
+  
+  ul h2 {
+  font-size: 1em;
+  line-height: 1.3333333em;
+  margin: 0 0 0 0;
+}
+
+	h2{
+		font-size: 1.875em;
+		line-height: 1.20em;
+	}
+
   section.article div.overlay {
-    background-color: #333332;
+    background-color: #666666;
     width: 100%;
     height: 250px;
     border-bottom: 1px solid #DDDDDD;
@@ -415,12 +730,14 @@ div.sub-footer p {
     font-size: 28px !important;
   }
   article.post header.post-header hgroup p.category {
-    font-size: 12px !important;
+    font-size: 20px !important;
   }
   article.post p, article.post ul, article.post ol {
-    font-size: 16px !important;
-    line-height: 24px !important;
+    font-size: 20px;
+    line-height: 24px ;
     margin-bottom: 27px;
+    list-style-type: square;
+    word-wrap: break-word;
   }
   article.post ul, article.post ol {
     margin-left: 30px;
@@ -475,13 +792,13 @@ div.sub-footer p {
     border-top: 1px solid #DDDDDD;
   }
   header.site-header nav ul li a {
-    color: #333332;
+    color: #666666;
     display: block;
     width: 100%;
     padding: 15px 0;
   }
   header.site-header nav ul li a:active {
-    background-color: #D25437;
+    background-color: blue;
     color: #FFFFFF;
   }
   .sub-footer p {

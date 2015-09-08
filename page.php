@@ -17,7 +17,6 @@
         </header>
         <?php echo article_markdown(); ?>
         <p class="meta">This is my <?php echo numeral(article_id()); ?> article and is <?php echo count_words(article_html()); ?> words long. <?php echo article_custom_field('attribution'); ?></p>
-        <a href="http://twitter.com/share?url=<?php echo full_url(); ?>&text=<?php echo article_title(); ?>&via=<?php echo twitter_account(); ?>" class="button">Tweet This</a>
       </article>
     </section>
     <?php endwhile; ?>

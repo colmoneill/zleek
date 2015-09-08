@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo theme_url('/css/style.css'); ?>">
 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
-    <link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
+    <link rel="shortcut icon" href="<?php echo theme_url('img/favicon.ico'); ?>">
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,30 +36,3 @@
   </head>
   
   <body class="<?php echo body_class(); ?>">
-    <header class="site-header">
-      <div class="wrap">
-        <hgroup>
-          <h1><a href="<?php echo base_url(); ?>"><?php echo site_name(); ?></a></h1>
-        </hgroup>
-        <a href="#nav" class="menu"><img src="<?php echo theme_url(); ?>img/menu.png"></a>
-        <?php if(has_menu_items()): ?>
-        <nav role="navigation">
-          <ul>
-            <li>
-              <a href="<?php echo base_url(); ?>" title="<?php echo site_name(); ?>">Home</a>
-            </li>
-            <?php while(menu_items()): if(hide_show_menu_item(menu_id(), "show-in-menu", "true") === "true") { ?>
-              <li>
-                <a <?php echo (menu_active() ? 'class="active"' : ''); ?> href="<?php echo menu_url(); ?>" title="<?php echo menu_title(); ?>">
-                  <?php echo menu_name(); ?>
-                </a>
-              </li>
-            <?php } endwhile; ?>
-            <?php if(twitter_account()): ?>
-              <li><a href="<?php echo twitter_url(); ?>">@<?php echo twitter_account(); ?></a></li>
-            <?php endif; ?>
-          </ul>
-        </nav>
-        <?php endif; ?>
-      </div>
-    </header>
