@@ -1,5 +1,5 @@
   <!-- Grab some fresh-squeezed jquery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- If they're out, get some from the cellar -->
   <script>window.jQuery || document.write('<script src="<?php echo theme_url('/js/jquery.js'); ?>"><\/script>')</script>
 

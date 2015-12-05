@@ -1,7 +1,6 @@
 <?php theme_include('header'); ?>
 
 <section class="article">
-  <img src="<?php echo theme_url('/img/loading.gif'); ?>" class="loading" alt="Loading...">
   <div class="overlay"></div>
   <div class="featured-image" style="background-image: url(<?php echo article_custom_field('featured-image', 'http://www.wallope.com/wp-content/uploads/textures-wallpapers-334-free-wood-texture-grunge-wood-picture.jpg'); ?>);"></div>
   <article class="wrap post">
